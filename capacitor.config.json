@@ -1,0 +1,7 @@
+{
+  "appId": "com.offlineProgrammer.findMarvels",
+  "appName": "findMarvels",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}
