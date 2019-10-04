@@ -1,14 +1,22 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Ionic Blank
+      The
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+
+<ion-content class="ion-padding">
+  <small>
+    You may choose to display weather either from your current location, or a preset location of your choosing
+  </small>
+  <ion-item>
+    <ion-searchbar type="text" debounce="500" (ionInput)="getCharacters($event)"></ion-searchbar>
+  </ion-item>
+  <ion-list *ngIf="isCharactersAvailable">
+    <ion-item *ngFor="let item of marvelCharacters" tappable (click)="selectCharacter(item)">
+      {{ item.name }}
+    </ion-item>
+  </ion-list>
 </ion-content>

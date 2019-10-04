@@ -51,11 +51,18 @@ interface Image {
   extension: string;
 }
 
+interface Url {
+  type: string;
+  url: string;
+}
+
 export interface CharacterResponse {
   id: number;
   name: string;
   description: string;
+  modified: Date;
   resourceURI: string;
+  urls: Url[];
   thumbnail: Image;
   comics: ComicList;
   stories: StoryList;
