@@ -51,11 +51,13 @@ export class HomePage {
   }
 
   async getCharacters(event) {
-    console.log('getCharacters', event.target.value);
-    const characters = await this.marvelService.getCharacter(event.target.value);
-    this.isCharactersAvailable = true;
-    this.marvelCharacters = characters;
-    console.log(characters);
+    if ( event.target.value ) {
+      console.log('getCharacters', event.target.value);
+      const characters = await this.marvelService.getCharacter(event.target.value);
+      this.isCharactersAvailable = true;
+      this.marvelCharacters = characters;
+      console.log(characters);
+    }
 
   }
 
