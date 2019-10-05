@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MarvelService } from '../services/marvel.service'
+import { MarvelService } from '../services/marvel.service';
+import { CharacterResponse } from '../interfaces/character';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,45 @@ import { MarvelService } from '../services/marvel.service'
 export class HomePage {
   public isCharactersAvailable = false;
   public marvelCharacters: any;
+  public character: CharacterResponse;
 
 
-  constructor(private marvelService: MarvelService) {}
+  constructor(private marvelService: MarvelService) {
+    this.character = {
+      id: null,
+      name: null,
+      description: null,
+      modified: null,
+      resourceURI: null,
+      urls: null,
+      thumbnail: null,
+      comics: {
+        available: 0,
+        returned: 0,
+        collectionURI: null,
+        items: null,
+
+      },
+      stories: {
+        available: 0,
+        returned: 0,
+        collectionURI: null,
+        items: null,
+      },
+      events: {
+        available: 0,
+        returned: 0,
+        collectionURI: null,
+        items: null,
+      },
+      series: {
+        available: 0,
+        returned: 0,
+        collectionURI: null,
+        items: null,
+      }
+    };
+  }
 
   async getCharacters(event) {
     console.log('getCharacters', event.target.value);
@@ -19,7 +56,13 @@ export class HomePage {
     this.isCharactersAvailable = true;
     this.marvelCharacters = characters;
     console.log(characters);
-    
+
+  }
+
+  selectCharacter(item) {
+    console.log(item);
+    this.character = item;
+    this.isCharactersAvailable = false;
   }
 
 

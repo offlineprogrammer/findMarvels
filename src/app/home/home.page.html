@@ -19,4 +19,34 @@
       {{ item.name }}
     </ion-item>
   </ion-list>
+
+  <div class="character-display">
+    <h1>{{ character.name }}&#176;</h1>
+    <p>{{ character.description }}</p>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>{{ character.name }}</ion-card-subtitle>
+        <ion-card-title>Overview</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size='6'>Comics</ion-col>
+            <ion-col size='6'>{{ character.comics.available }}&#176;</ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col size='6'>Stories</ion-col>
+              <ion-col size='6'>{{ character.stories.available }}&#176;</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size='6'>Series</ion-col>
+            <ion-col size='6'>{{ character.series.available }}&#176;</ion-col>
+        </ion-row>
+        </ion-grid>
+
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+
 </ion-content>
