@@ -11,6 +11,7 @@ export class HomePage {
   public isCharactersAvailable = false;
   public marvelCharacters: any;
   public character: CharacterResponse;
+  public searchTerm = '';
 
 
   constructor(private marvelService: MarvelService) {
@@ -71,6 +72,7 @@ export class HomePage {
   selectCharacter(item) {
     console.log(item);
     console.log('Image ' , item.thumbnail.path);
+    this.searchTerm = '';
     this.character = item;
     this.character.image = item.thumbnail.path + '.' + item.thumbnail.extension;
     this.isCharactersAvailable = false;
