@@ -68,4 +68,5 @@ export interface CharacterResponse {
   stories: StoryList;
   events: EventList;
   series: SeriesList;
+  image: string;
 }

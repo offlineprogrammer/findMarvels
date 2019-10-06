@@ -21,7 +21,11 @@ export class HomePage {
       modified: null,
       resourceURI: null,
       urls: null,
-      thumbnail: null,
+      image: null,
+      thumbnail: {
+        path: null,
+        extension: null
+      },
       comics: {
         available: 0,
         returned: 0,
@@ -57,13 +61,18 @@ export class HomePage {
       this.isCharactersAvailable = true;
       this.marvelCharacters = characters;
       console.log(characters);
+    } else {
+      this.marvelCharacters = null;
+      this.isCharactersAvailable = false;
     }
 
   }
 
   selectCharacter(item) {
     console.log(item);
+    console.log('Image ' , item.thumbnail.path);
     this.character = item;
+    this.character.image = item.thumbnail.path + '.' + item.thumbnail.extension;
     this.isCharactersAvailable = false;
   }
 

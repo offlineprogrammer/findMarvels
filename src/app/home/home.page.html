@@ -1,8 +1,13 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>
-      The
-    </ion-title>
+      <ion-item>
+          <ion-searchbar type="text" debounce="500" (ionInput)="getCharacters($event)"></ion-searchbar>
+        </ion-item>
+        <ion-list *ngIf="isCharactersAvailable">
+          <ion-item *ngFor="let item of marvelCharacters" tappable (click)="selectCharacter(item)">
+            {{ item.name }}
+          </ion-item>
+        </ion-list>
   </ion-toolbar>
 </ion-header>
 
@@ -11,19 +16,13 @@
   <small>
     You may choose to display weather either from your current location, or a preset location of your choosing
   </small>
-  <ion-item>
-    <ion-searchbar type="text" debounce="500" (ionInput)="getCharacters($event)"></ion-searchbar>
-  </ion-item>
-  <ion-list *ngIf="isCharactersAvailable">
-    <ion-item *ngFor="let item of marvelCharacters" tappable (click)="selectCharacter(item)">
-      {{ item.name }}
-    </ion-item>
-  </ion-list>
+ 
 
   <div class="character-display">
     <h1>{{ character.name }}</h1>
     <p>{{ character.description }}</p>
     <ion-card>
+        <ion-img [src]='character.image'></ion-img>
       <ion-card-header>
         <ion-card-subtitle>{{ character.name }}</ion-card-subtitle>
         <ion-card-title>Overview</ion-card-title>
