@@ -16,34 +16,45 @@
       </ion-list>
  
 
-  <div class="character-display">
+   <!--<div class="character-display" *ngIf="character.name">
+    
     <h1>{{ character.name }}</h1>
-    <p>{{ character.description }}</p>
-    <ion-card>
+    <p>{{ character.description }}</p> -->
+    <ion-card class="single-char-home" *ngIf="character.name">
+        <ion-item>
+            <ion-avatar item-start>
+              <img [src]='character.image'>
+            </ion-avatar>
+            <h2>{{ character.name }}</h2>
+          </ion-item>
+          
         <ion-img [src]='character.image'></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>{{ character.name }}</ion-card-subtitle>
-        <ion-card-title>Overview</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-grid>
-          <ion-row>
-            <ion-col size='6'>Comics</ion-col>
-            <ion-col size='6'>{{ character.comics.available }}</ion-col>
-          </ion-row>
-          <ion-row>
-              <ion-col size='6'>Stories</ion-col>
-              <ion-col size='6'>{{ character.stories.available }}</ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col size='6'>Series</ion-col>
-            <ion-col size='6'>{{ character.series.available }}</ion-col>
-        </ion-row>
-        </ion-grid>
-
-      </ion-card-content>
-
+        <ion-card-content>
+            <p>{{ character.description }}</p>
+          </ion-card-content>
+        
+            <ion-row>
+                <ion-col>
+                  <button ion-button icon-start clear small>
+                    <ion-icon name="heart"></ion-icon>
+                    <div>{{ character.comics.available }} Comics</div>
+                  </button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button icon-start clear small>
+                      <ion-icon name="heart"></ion-icon>
+                      <div>{{ character.stories.available }} Storis</div>
+                    </button>
+                  </ion-col>
+                <ion-col>
+                  <button ion-button icon-start clear small>
+                    <ion-icon name="text"></ion-icon>
+                    <div>{{ character.series.available }} Series</div>
+                  </button>
+                </ion-col>
+              </ion-row>
+        
     </ion-card>
-  </div>
+  <!-- </div> -->
 
 </ion-content>

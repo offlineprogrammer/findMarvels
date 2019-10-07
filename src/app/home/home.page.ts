@@ -56,7 +56,7 @@ export class HomePage {
   }
 
   async getCharacters(event) {
-    if ( event.target.value ) {
+    if ( event.target.value && event.target.value.length >= 3 ) {
       console.log('getCharacters', event.target.value);
       const characters = await this.marvelService.getCharacter(event.target.value);
       this.isCharactersAvailable = true;
