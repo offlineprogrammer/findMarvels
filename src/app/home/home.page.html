@@ -8,12 +8,10 @@
 </ion-header>
 
 
-<ion-content class="ion-padding">
+<ion-content fullscreen>
     <ion-list *ngIf="isCharactersAvailable">
         <ion-item *ngFor="let item of marvelCharacters" tappable (click)="selectCharacter(item)">
             <ion-label>
-            <ion-skeleton-text animated>
-              </ion-skeleton-text>
           {{ item.name }}
         </ion-label>
         </ion-item>
