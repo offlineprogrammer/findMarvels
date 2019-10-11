@@ -1,0 +1,14 @@
+{
+	"dev": {
+		"awscloudformation": {
+			"AuthRoleName": "findmarvels-dev-20191010125027-authRole",
+			"UnauthRoleArn": "arn:aws:iam::279012124572:role/findmarvels-dev-20191010125027-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::279012124572:role/findmarvels-dev-20191010125027-authRole",
+			"Region": "us-west-2",
+			"DeploymentBucketName": "findmarvels-dev-20191010125027-deployment",
+			"UnauthRoleName": "findmarvels-dev-20191010125027-unauthRole",
+			"StackName": "findmarvels-dev-20191010125027",
+			"StackId": "arn:aws:cloudformation:us-west-2:279012124572:stack/findmarvels-dev-20191010125027/50c30d20-eb97-11e9-b3c8-02353448ae88"
+		}
+	}
+}
